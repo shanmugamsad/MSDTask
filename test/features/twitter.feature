@@ -3,17 +3,17 @@ Feature: Twitter API
 
  Scenario Outline: Login and post a tweet
     Given A valid token is generated for a user
-    Then Post a tweet with content "<content>"
+    Then Post a tweet with content <content>
 
-   Examples:
+   Examples: Vertical
    |content|
    |We welcome you to MSD family :)|
 
-  Scenario: Retweet and fetch id and count of retweets
-    When The previous tweet is retweeted
-    Then Fetch the retweet count and retweeters Ids
+  Scenario: Re_tweet and fetch id and count of re_tweets
+    When The previous tweet is re_tweeted
+    Then Fetch the re_tweet count and re_tweeters Ids
 
-  Scenario: Unretweet and Delete the tweet
+  Scenario: Un_re_tweet and Delete the tweet
     Given The user revert the previous
-    Then Fetch the retweet count and retweeters Ids
+    Then Fetch the re_tweet count and re_tweeters Ids
     Then delete the tweet
