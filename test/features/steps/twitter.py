@@ -7,33 +7,23 @@ twitterPg = twitter_services.Twitter()
 file_read_write: FileIOUtils = FileIOUtils()
 
 
-@given(u'Tweet content is fetched for <"{tweet_id}"')
-def get_tweet_content(tweet_id):
+@given(u'Tweet content is fetched for "{tweet_id}"')
+def step_impl(tweet_id):
     twitterPg.fetch_tweet(tweet_id)
 
 
-@given(u'Download the video in the same tweet with "{tweet_id}"')
-def get_tweet_content(tweet_id):
-    twitterPg.tweet(tweet_id)
+@then('Download the video in the same tweet with "{tweet_id}"')
+def step_impl(tweet_id):
+    twitterPg.fetch_tweet(tweet_id)
 
 
-@given(u'Fetch the re_tweet count and re_tweeters Ids for the same tweet with "{tweet_id}"')
-def get_tweet_content(tweet_id):
-    twitterPg.fetch_tweet_count(tweet_id)
-    twitterPg.fetch_tweeters_ids(tweet_id)
+@then('Fetch the re_tweet count and re_tweeters Ids for the same tweet with "{tweet_id}"')
+def step_impl(tweet_id):
+    twitterPg.fetch_retweet_count(tweet_id)
+    twitterPg.fetch_reweeters_ids(tweet_id)
 
 
-@given('Verify the Tweet content for "{tweet_id}"')
-def get_tweet_content(self, tweet_id):
-    self.twitterPg.tweet(tweet_id)
-
-
-@given('Verify the re_tweet count for "{tweet_id}"')
-def get_tweet_content(self, tweet_id):
-    self.twitterPg.tweet(tweet_id)
-
-
-@given('Verify the re_tweeters Ids for the same tweet with "{tweet_id}"')
+@then('Verify the Tweet content for "{tweet_id}"')
 def get_tweet_content(self, tweet_id):
     self.twitterPg.tweet(tweet_id)
 

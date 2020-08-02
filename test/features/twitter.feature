@@ -1,5 +1,4 @@
 Feature: Twitter API
-  Login to Twitter and Create a Tweet, Retweet it and Untweet the same
 
   @task1
   Scenario Outline: Login and post a tweet
@@ -14,10 +13,8 @@ Feature: Twitter API
   @task1
   Scenario Outline: Re_tweet and fetch id and count of re_tweets
     Then Verify the Tweet content for <tweet_id>
-    Then Verify the re_tweet count for <tweet_id>
-    Then Verify the re_tweeters Ids for the same tweet with <tweet_id>
 
-    Examples: Vertical
+    Examples:
       | tweet_id            |
       | 1257326183101980673 |
 
