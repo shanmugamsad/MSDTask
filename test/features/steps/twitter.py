@@ -8,17 +8,17 @@ file_read_write: FileIOUtils = FileIOUtils()
 
 
 @given(u'Tweet content is fetched for "{tweet_id}"')
-def step_impl(tweet_id):
+def fetch_tweet(tweet_id):
     twitterPg.fetch_tweet(tweet_id)
 
 
 @then('Download the video in the same tweet with "{tweet_id}"')
-def step_impl(tweet_id):
-    twitterPg.fetch_tweet(tweet_id)
+def save_media(tweet_id):
+    twitterPg.save_media(tweet_id)
 
 
 @then('Fetch the re_tweet count and re_tweeters Ids for the same tweet with "{tweet_id}"')
-def step_impl(tweet_id):
+def fetch_retweet_details(tweet_id):
     twitterPg.fetch_retweet_count(tweet_id)
     twitterPg.fetch_reweeters_ids(tweet_id)
 

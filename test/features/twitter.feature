@@ -3,8 +3,8 @@ Feature: Twitter API
   @task1
   Scenario Outline: Login and post a tweet
     Given Tweet content is fetched for <tweet_id>
-    Then Download the video in the same tweet with <tweet_id>
     Then Fetch the re_tweet count and re_tweeters Ids for the same tweet with <tweet_id>
+    Then Download the video in the same tweet with <tweet_id>
 
    Examples:
    |tweet_id|
