@@ -1,6 +1,5 @@
 import requests
-from jproperties import Properties
-from main.utils.FileIOUtils import FileIOUtils
+from utilities.FileIOUtils import FileIOUtils
 import base64
 
 

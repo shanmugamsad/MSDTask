@@ -1,6 +1,6 @@
 from behave import *
-from main.services import twitter_services
-from main.utils.FileIOUtils import FileIOUtils
+from services import twitter_services
+from utilities.FileIOUtils import FileIOUtils
 
 
 twitterPg = twitter_services.Twitter()
